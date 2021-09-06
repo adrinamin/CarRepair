@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarRepair.Core\CarRepair.Core.csproj" />
+    <ProjectReference Include="..\CarRepair.SharedKernel\CarRepair.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
