@@ -1,4 +1,6 @@
-﻿namespace CarRepair.Core
+﻿using CarRepair.Core.Entities;
+
+namespace CarRepair.Core.Aggregates
 {
     public class MonitoringNotification
     {

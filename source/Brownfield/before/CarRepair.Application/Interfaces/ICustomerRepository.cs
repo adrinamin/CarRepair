@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CarRepair.Core;
+using CarRepair.Core.Entities;
 
-namespace CarRepair.Application
+namespace CarRepair.Application.Interfaces
 {
     public interface ICustomerRepository
     {

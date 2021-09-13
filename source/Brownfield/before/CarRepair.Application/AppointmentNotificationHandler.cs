@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using CarRepair.Application.Interfaces;
 using CarRepair.Core;
+using CarRepair.Core.Aggregates;
 using CarRepair.SharedKernel;
 
 namespace CarRepair.Application
@@ -17,13 +19,13 @@ namespace CarRepair.Application
             this.appointmentRepository = appointmentRepository ?? throw new ArgumentNullException(nameof(appointmentRepository));
         }
 
-        public async Task Handle(AppointmentNotification notification, CancellationToken cancellationToken)
+        public void Handle(AppointmentNotification notification, CancellationToken cancellationToken)
         {
             var appointment = notification.Appointment;
             Guard.IsNotNull(appointment, nameof(appointment));
-            await this.appointmentRepository.AddAppointmentAsync(appointment);
+            this.appointmentRepository.AddAppointmentAsync(appointment);
 
-            await this.notificationSender.Send(appointment.Title, "Your Appointment has been saved!",
+            this.notificationSender.Send(appointment.Title, "Your Appointment has been saved!",
                 appointment.DateTime);
         }
     }

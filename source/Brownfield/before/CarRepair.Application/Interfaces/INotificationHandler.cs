@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace CarRepair.Application
+namespace CarRepair.Application.Interfaces
 {
     public interface INotificationHandler<in T> where T : class
     {
-        Task Handle(T notification, CancellationToken cancellationToken);
+        void Handle(T notification, CancellationToken cancellationToken);
     }
 }

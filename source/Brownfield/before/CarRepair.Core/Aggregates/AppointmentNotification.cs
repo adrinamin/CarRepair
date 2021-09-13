@@ -1,4 +1,4 @@
-﻿namespace CarRepair.Core
+﻿namespace CarRepair.Core.Aggregates
 {
     public class AppointmentNotification
     {

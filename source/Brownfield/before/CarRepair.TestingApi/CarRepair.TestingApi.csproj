@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarRepair.Application\CarRepair.Application.csproj" />
+    <ProjectReference Include="..\CarRepair.Core\CarRepair.Core.csproj" />
+  </ItemGroup>
+
 </Project>

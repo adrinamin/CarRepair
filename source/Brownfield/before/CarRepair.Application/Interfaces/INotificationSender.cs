@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CarRepair.Application
+namespace CarRepair.Application.Interfaces
 {
     public interface INotificationSender
     {

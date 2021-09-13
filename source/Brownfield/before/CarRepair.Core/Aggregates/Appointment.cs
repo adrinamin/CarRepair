@@ -1,6 +1,7 @@
 ﻿using System;
+using CarRepair.Core.Entities;
 
-namespace CarRepair.Core
+namespace CarRepair.Core.Aggregates
 {
     public record Appointment
     {

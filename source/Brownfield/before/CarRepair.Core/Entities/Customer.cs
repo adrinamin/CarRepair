@@ -1,4 +1,4 @@
-﻿namespace CarRepair.Core
+﻿namespace CarRepair.Core.Entities
 {
     public record Customer
     {
