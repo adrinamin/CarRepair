@@ -21,6 +21,7 @@ namespace CarRepair.Test.UseCaseTests
             var monitoring = new Monitoring();
 
             monitoring.Notify(monitoringStatus);
+
             var currentRepairState = monitoring.GetCurrentRepairState();
 
             Assert.AreEqual(RepairStatus.InProgress, currentRepairState);
