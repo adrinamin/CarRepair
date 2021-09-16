@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
 using CarRepair.Application.Interfaces;
-using CarRepair.Core;
 using CarRepair.Core.Aggregates;
 using CarRepair.SharedKernel;
 
@@ -21,12 +19,16 @@ namespace CarRepair.Application
 
         public void Handle(AppointmentNotification notification, CancellationToken cancellationToken)
         {
-            var appointment = notification.Appointment;
-            Guard.IsNotNull(appointment, nameof(appointment));
-            this.appointmentRepository.AddAppointmentAsync(appointment);
+            Guard.IsNotNull(notification, nameof(notification));
+            var task = this.appointmentRepository.GetAppointmentByIdAsync(notification.Appointment.Id).AsTask();
+            Appointment appointment = null;
+            if (task.IsCompleted)
+            {
+                appointment = task.Result;
+            }
 
-            this.notificationSender.Send(appointment.Title, "Your Appointment has been saved!",
-                appointment.DateTime);
+            this.notificationSender.Send(appointment?.Title, "Getting Appointment",
+                appointment?.DateTime ?? DateTime.Now);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace CarRepair.Core.Entities
+﻿namespace CarRepair.Core.Entities
 {
     public class LogInInfo
     {

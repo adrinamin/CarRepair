@@ -2,7 +2,7 @@
 
 namespace CarRepair.Application
 {
-    public class DescriptionToRepairStatusParser
+    public static class DescriptionToRepairStateParser
     {
         public static RepairStatus ParseTo(string description)
         {

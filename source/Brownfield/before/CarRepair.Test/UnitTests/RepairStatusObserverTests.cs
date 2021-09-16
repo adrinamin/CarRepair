@@ -13,6 +13,7 @@ namespace CarRepair.Test.UnitTests
         [TestMethod]
         public void UpdateStatusShouldSendNotificationWithCorrectRepairState()
         {
+            // Arrange
             var isCalled = false;
             var monitoringStatus = new MonitoringStatus
             {
@@ -33,8 +34,10 @@ namespace CarRepair.Test.UnitTests
                 RepairStatus = RepairStatus.InProgress
             };
 
+            // Act
             repairStatusObserver.UpdateStatus(monitoringStatus);
 
+            // Assert
             Assert.IsTrue(isCalled);
         }
     }

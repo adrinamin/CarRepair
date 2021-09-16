@@ -1,9 +1,5 @@
-﻿using System;
-using CarRepair.Application;
-using CarRepair.Application.Interfaces;
-using CarRepair.Core;
+﻿using CarRepair.Application;
 using CarRepair.Core.Entities;
-using Moq;
 
 namespace CarRepair.TestingApi
 {
@@ -17,28 +13,19 @@ namespace CarRepair.TestingApi
             
             var notificationReader = new MonitoringNotificationReader();
             var monitoringStatus = notificationReader.Read();
-            return DescriptionToRepairStatusParser.ParseTo(monitoringStatus.Description);
-        }
-
-        public DateTime GetReparationStartDate()
-        {
-            throw new NotImplementedException();
-        }
-
-        public DateTime GetAppointedEndDate()
-        {
-            throw new NotImplementedException();
-        }
-
-        public double GetRemainingTime()
-        {
-            throw new NotImplementedException();
+            return DescriptionToRepairStateParser.ParseTo(monitoringStatus.Description);
         }
 
         public void Notify(MonitoringStatus monitoringStatus)
         {
             var repairStatusObserver = new RepairStatusObserver(new MonitoringNotificationSender());
             repairStatusObserver.UpdateStatus(monitoringStatus);
+        }
+
+        public double GetRemainingTime()
+        {
+            // get remaining time until check-up is finished...
+            return 0.0;
         }
     }
 }

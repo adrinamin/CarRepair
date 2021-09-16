@@ -1,4 +1,5 @@
-﻿using CarRepair.Application.Interfaces;
+﻿using System;
+using CarRepair.Application.Interfaces;
 using CarRepair.Core.Entities;
 
 namespace CarRepair.Application
@@ -7,7 +8,13 @@ namespace CarRepair.Application
     {
         public MonitoringStatus Read()
         {
-            throw new System.NotImplementedException();
+            // dummy implementation for reading notification
+            return new MonitoringStatus
+            {
+                CurrentDateTime = DateTime.Now,
+                Description = "In progress",
+                Title = "Monitoring changed!"
+            };
         }
     }
 }

@@ -11,6 +11,7 @@ namespace CarRepair.Test.UseCaseTests
         [TestMethod]
         public void SendingUpdatedRepairStatusNotification()
         {
+            // Arrange
             var monitoringStatus = new MonitoringStatus
             {
                 CurrentDateTime = DateTime.Now,
@@ -22,8 +23,10 @@ namespace CarRepair.Test.UseCaseTests
 
             monitoring.Notify(monitoringStatus);
 
+            // Act
             var currentRepairState = monitoring.GetCurrentRepairState();
 
+            // Assert
             Assert.AreEqual(RepairStatus.InProgress, currentRepairState);
         }
     }

@@ -8,7 +8,8 @@ namespace CarRepair.Application
     {
         public Task Send(string title, string message, DateTime dateTime)
         {
-            throw new NotImplementedException();
+            // dummy implementation
+            return Task.Run(() => Console.WriteLine($"{title}: {message}, at {dateTime}"));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using CarRepair.Application.Interfaces;
 using CarRepair.Core.Entities;
+using CarRepair.SharedKernel;
 
 namespace CarRepair.Application
 {
@@ -12,12 +13,14 @@ namespace CarRepair.Application
         {
             this.notificationSender = notificationSender ?? throw new ArgumentNullException(nameof(notificationSender));
         }
+
         public RepairStatus RepairStatus { get; set; }
 
         public void UpdateStatus(MonitoringStatus monitoringStatus)
         {
-            // more complex logic...
-            this.notificationSender.Send(monitoringStatus.Title, this.RepairStatus.ToString(), DateTime.Now);
+            var title = StringManipulator.Manipulate(monitoringStatus.Title);
+            var repairStatus = DescriptionToRepairStateParser.ParseTo(monitoringStatus.Description);
+            this.notificationSender.Send(title, repairStatus.ToString(), DateTime.Now);
         }
     }
 }
