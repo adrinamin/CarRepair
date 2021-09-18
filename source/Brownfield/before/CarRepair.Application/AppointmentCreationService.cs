@@ -20,7 +20,6 @@ namespace CarRepair.Application
         {
             this.appointmentRepository.AddAppointmentAsync(appointment);
             this.notificationSender.Send(appointment.Title, AppointmentHasBeenSaved, DateTime.Now);
-
         }
     }
 }

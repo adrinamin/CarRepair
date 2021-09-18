@@ -22,5 +22,18 @@ namespace CarRepair.Application
             var repairStatus = DescriptionToRepairStateParser.ParseTo(monitoringStatus.Description);
             this.notificationSender.Send(title, repairStatus.ToString(), DateTime.Now);
         }
+
+        // non working sample code! just for demo purposes!
+        //public void UpdateTitleStatus(MonitoringStatus monitoringStatus)
+        //{
+        //    var title = StringManipulator.Manipulate(monitoringStatus.Title);
+        //    this.notificationSender.Send(title, monitoringStatus.Description, DateTime.Now);
+        //}
+
+        //public void UpdateRepairStatus(MonitoringStatus monitoringStatus)
+        //{
+        //    var repairStatus = DescriptionToRepairStateParser.ParseTo(monitoringStatus.Description);
+        //    this.notificationSender.Send(monitoringStatus.Title, repairStatus.ToString(), DateTime.Now);
+        //}
     }
 }
