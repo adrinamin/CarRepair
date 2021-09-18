@@ -7,12 +7,14 @@ namespace CarRepair.Application
     {
         public bool Login(LogInInfo logInInfo)
         {
-            throw new System.NotImplementedException();
+            // dummy implementation
+            return true;
         }
 
         public bool Logout()
         {
-            throw new System.NotImplementedException();
+            // dummy implementation
+            return true;
         }
     }
 }

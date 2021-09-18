@@ -12,7 +12,7 @@ namespace CarRepair.Application
             return new MonitoringStatus
             {
                 CurrentDateTime = DateTime.Now,
-                Description = "In progress",
+                Description = "InProgress",
                 Title = "Monitoring changed!"
             };
         }

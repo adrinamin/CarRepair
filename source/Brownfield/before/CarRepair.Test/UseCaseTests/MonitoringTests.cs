@@ -15,7 +15,7 @@ namespace CarRepair.Test.UseCaseTests
             var monitoringStatus = new MonitoringStatus
             {
                 CurrentDateTime = DateTime.Now,
-                Description = "",
+                Description = "InProgress",
                 Title = "Check-up of car"
             };
 

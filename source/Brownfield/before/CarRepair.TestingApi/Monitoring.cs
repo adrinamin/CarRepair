@@ -25,6 +25,7 @@ namespace CarRepair.TestingApi
         public double GetRemainingTime()
         {
             // get remaining time until check-up is finished...
+            // dummy implementation
             return 0.0;
         }
     }
