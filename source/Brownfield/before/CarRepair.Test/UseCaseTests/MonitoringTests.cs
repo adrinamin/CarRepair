@@ -9,7 +9,7 @@ namespace CarRepair.Test.UseCaseTests
     public class MonitoringTests
     {
         [TestMethod]
-        public void SendingUpdatedRepairStatusNotification()
+        public void GetCorrectRepairStatusNotificationAfterUpdate()
         {
             // Arrange
             var monitoringStatus = new MonitoringStatus

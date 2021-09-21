@@ -11,7 +11,7 @@ namespace CarRepair.Test.UnitTests
     public class RepairStatusObserverTests
     {
         [TestMethod]
-        public void UpdateStatusShouldSendNotificationWithCorrectRepairState()
+        public void UpdateStatusShouldSendNotification()
         {
             // Arrange
             var isCalled = false;
