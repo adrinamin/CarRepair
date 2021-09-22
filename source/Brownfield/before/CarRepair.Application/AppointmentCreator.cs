@@ -4,13 +4,13 @@ using CarRepair.Core.Aggregates;
 
 namespace CarRepair.Application
 {
-    public class AppointmentCreationService
+    public class AppointmentCreator
     {
         private const string AppointmentHasBeenSaved = "Appointment has been saved!";
         private readonly IAppointmentRepository appointmentRepository;
         private readonly INotificationSender notificationSender;
 
-        public AppointmentCreationService(IAppointmentRepository appointmentRepository, INotificationSender notificationSender)
+        public AppointmentCreator(IAppointmentRepository appointmentRepository, INotificationSender notificationSender)
         {
             this.appointmentRepository = appointmentRepository ?? throw new ArgumentNullException(nameof(appointmentRepository));
             this.notificationSender = notificationSender ?? throw new ArgumentNullException(nameof(notificationSender));

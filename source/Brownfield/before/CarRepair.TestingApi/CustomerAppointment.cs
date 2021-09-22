@@ -17,7 +17,7 @@ namespace CarRepair.TestingApi
         public void Create(Appointment appointment)
         {
             var appointmentNotificationSender = new AppointmentNotificationSender();
-            var appointmentCreationService = new AppointmentCreationService(appointmentRepository, appointmentNotificationSender);
+            var appointmentCreationService = new AppointmentCreator(appointmentRepository, appointmentNotificationSender);
 
             appointmentCreationService.Create(appointment);
         }
